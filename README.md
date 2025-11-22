@@ -4,20 +4,20 @@
 
 This project is a real-time Gun Detection System built using:
 
-_Python
+- Python
 
-_OpenCV
+- OpenCV
 
-_Haar Cascade Classifier
+- Haar Cascade Classifier
 
-_Imutils
+- Imutils
 
 The system uses a pre-trained Haar Cascade (cascade.xml) to detect firearms from a webcam feed.
 When a gun-like object is detected, the system draws bounding boxes and reports detection.
 
 This project is ideal for Computer Vision beginners, OpenCV learners, and portfolio building.
 
-🎯 Features
+## 🎯 Features
 
 ✔ Real-time gun detection using webcam
 ✔ Haar Cascade classifier for fast detection
@@ -26,7 +26,7 @@ This project is ideal for Computer Vision beginners, OpenCV learners, and portfo
 ✔ Lightweight & efficient
 ✔ Beginner-friendly code with comments
 
-🧠 How Haar Cascade Works (Short Understanding)
+## 🧠 How Haar Cascade Works (Short Understanding)
 Haar Cascade works in 3 steps:
 1️⃣ Haar Features (Light–Dark Rectangle Patterns)
 
