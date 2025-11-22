@@ -227,5 +227,6 @@ This project is free to use under the MIT License.
 ## ❤️ Author
 
 SK NAIM AKHTAR
+
 Python Learner | Data Science (Learner) | Computer Vision Enthusiast
 
