@@ -1,4 +1,3 @@
-# python_gun_detection
 # ⭐ README.md — Gun Detection System using Haar Cascade & OpenCV
 ## 📌 Project Overview
 
