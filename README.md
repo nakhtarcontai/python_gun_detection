@@ -72,7 +72,7 @@ If a window passes all stages → gun detected ✔
 
 ## 🚀 How to Run the Project
 1️⃣ Install Dependencies
-'''text
+'''bash
 pip install opencv-python imutils numpy
 '''
 
