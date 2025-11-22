@@ -60,12 +60,14 @@ If a window passes all stages → gun detected ✔
 | Platform             | Works on Windows, Mac, Linux |
 
 ## 📂 Project Structure
+```text
 📁 Gun-Detection-HaarCascade
 │
 ├── gun_detection.py        # Main Python script
 ├── cascade.xml             # Haar cascade model for gun detection
 ├── README.md               # Documentation
 └── sample_output.png       # Screenshot (optional)
+```
 
 
 🚀 How to Run the Project
