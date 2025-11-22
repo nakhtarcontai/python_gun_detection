@@ -71,34 +71,41 @@ If a window passes all stages → gun detected ✔
 
 
 ## 🚀 How to Run the Project
-1️⃣ Install Dependencies
+### 1️⃣ Install Dependencies
 ```bash
 pip install opencv-python imutils numpy
 ```
 
-2️⃣ Keep the files together
+### 2️⃣ Keep the files together
 ```text
 gun_detection.py
-```
 cascade.xml
+```
 
-3️⃣ Run the script
+
+### 3️⃣ Run the script
+```text
 python gun_detection.py
+```
 
-4️⃣ Quit the video
 
-Press Q to exit.
-
-🧩 Complete Python Code
+## 🧩 Complete Python Code
+```bash
 import numpy as np
 import cv2 as cv
 import imutils as iu
 import datetime as dt
 
+# Load cascade
 gun_cascade = cv.CascadeClassifier("cascade.xml")
+
+if gun_cascade.empty():
+    print("Error: Cascade file not loaded!")
+    exit()
+
 camera = cv.VideoCapture(0)
 
-gun_exist = False
+gun_exist = False  # Default value
 
 while True:
     ret, frame = camera.read()
@@ -108,6 +115,7 @@ while True:
     frame = iu.resize(frame, width=500)
     gray = cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
 
+    # Detect guns
     gun = gun_cascade.detectMultiScale(
         gray,
         scaleFactor=1.1,
@@ -115,39 +123,44 @@ while True:
         minSize=(80, 80)
     )
 
+    # If detection found
     if len(gun) > 0:
         gun_exist = True
 
+    # Draw bounding boxes
     for (x, y, w, h) in gun:
         cv.rectangle(frame, (x, y), (x + w, y + h), (255, 0, 0), 2)
 
     cv.imshow("Security Feed", frame)
     key = cv.waitKey(1) & 0xFF
+
     if key == ord("q"):
         break
 
 camera.release()
 cv.destroyAllWindows()
 
+# Final output
 if gun_exist:
     print("Guns detected")
 else:
-    print("No guns detected")
+    print("Guns not detected")
+```
 
-📊 Concept Understanding (Step-by-Step)
-🔹 Step 1 — Load Haar Cascade
+## 📊 Concept Understanding (Step-by-Step)
+### 🔹 Step 1 — Load Haar Cascade
 
 This file is the "brain" that contains trained object features.
 
-🔹 Step 2 — Access Webcam
+### 🔹 Step 2 — Access Webcam
 
 OpenCV captures live video frames.
 
-🔹 Step 3 — Convert Frame to Grayscale
+### 🔹 Step 3 — Convert Frame to Grayscale
 
 Required for Haar features (they work on intensity only).
 
-🔹 Step 4 — Apply detectMultiScale()
+### 🔹 Step 4 — Apply detectMultiScale()
 
 This function:
 
@@ -159,61 +172,60 @@ Runs through cascade stages
 
 Marks detection
 
-🔹 Step 5 — Draw Detection Box
+### 🔹 Step 5 — Draw Detection Box
 
 A rectangle is drawn where the gun is found.
 
-🔹 Step 6 — Display Output
+### 🔹 Step 6 — Display Output
 
 Shows live security feed with bounding boxes.
 
-🔹 Step 7 — Final Output
+### 🔹 Step 7 — Final Output
 
 Prints whether any gun was detected during your session.
 
-📈 Diagrams & Explanation
-1️⃣ Haar Features Diagram
+## 📈 Diagrams & Explanation
+### 1️⃣ Haar Features Diagram
+```text
 +------+------+
 | DARK | LIGHT |
 +------+------+
 Edge detection
+```
 
-2️⃣ Sliding Window Scan
+
+### 2️⃣ Sliding Window Scan
+```text
 Row 1: [WIN] → → → →
 Row 2: ↓ [WIN] → → →
 Row 3: ↓ [WIN] → → →
+```
 
-3️⃣ Cascade Stages
+### 3️⃣ Cascade Stages
+```text
 Stage 1 → Stage 2 → … → Stage N
 (Passes all?) → Gun Detected ✔
+```
 
-🛡️ Limitations
+##🛡️ Limitations
 
 ❌ Haar Cascades are not fully accurate
 ❌ Works best in good lighting
 ❌ Should not be used for real security without ML upgrades
 
-🔮 Future Improvements
+## 🔮 Future Improvements
 
 ✔ Switch to YOLOv8 / YOLOv9 gun detection (very accurate)
 ✔ Add alarm system on detection
 ✔ Add image recording + timestamp
 ✔ Add email/mobile alert system
 
-📜 License
+## 📜 License
 
 This project is free to use under the MIT License.
 
-❤️ Author
+## ❤️ Author
 
-SK SAMIM AKHTAR
-Python Learner | Data Science Learner | Computer Vision Enthusiast
+SK NAIM AKHTAR
+Python Learner | Data Science (Learner) | Computer Vision Enthusiast
 
-If you want:
-
-📘 Convert this README into PDF
-🎨 Add images or badges (GitHub shields)
-🚀 Make this an advanced computer vision portfolio project
-🟩 Improve accuracy using YOLO
-
-Just tell me — I will make it!
