@@ -50,14 +50,16 @@ Final Stage → confirm object
 
 If a window passes all stages → gun detected ✔
 
-🖥️ Tech Stack
-Component	Technology
-Programming Language	Python
-Computer Vision	OpenCV
-Model	Haar Cascade (cascade.xml)
-Helper Library	Imutils
-Platform	Works on Windows, Mac, Linux
-📂 Project Structure
+## 🖥️ Tech Stack
+| Component            | Technology                   |
+| -------------------- | ---------------------------- |
+| Programming Language | Python                       |
+| Computer Vision      | OpenCV                       |
+| Model                | Haar Cascade (cascade.xml)   |
+| Helper Library       | Imutils                      |
+| Platform             | Works on Windows, Mac, Linux |
+
+## 📂 Project Structure
 📁 Gun-Detection-HaarCascade
 │
 ├── gun_detection.py        # Main Python script
