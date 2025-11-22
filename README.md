@@ -27,6 +27,7 @@ This project is ideal for Computer Vision beginners, OpenCV learners, and portfo
 
 ## 🧠 How Haar Cascade Works (Short Understanding)
 Haar Cascade works in 3 steps:
+
 1️⃣ Haar Features (Light–Dark Rectangle Patterns)
 
 It checks brightness differences in rectangles to detect shapes (edges, lines, curves).
