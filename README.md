@@ -70,9 +70,11 @@ If a window passes all stages → gun detected ✔
 ```
 
 
-🚀 How to Run the Project
+## 🚀 How to Run the Project
 1️⃣ Install Dependencies
+'''text
 pip install opencv-python imutils numpy
+'''
 
 2️⃣ Keep the files together
 gun_detection.py
